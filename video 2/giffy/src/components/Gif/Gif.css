@@ -1,0 +1,25 @@
+.Gif {
+    display: flex;
+    margin: 2px;
+    flex-direction: column;
+    padding: 10px;
+    width: 75%;
+    border: 10px solid red;
+}
+
+.Gif-link {
+    text-decoration: none;
+}
+
+.Gif h4 {
+    margin: 15px;
+}
+
+.Gif img {
+    object-fit: contain; 
+}
+
+a {
+    color: rgb(233, 148, 20);
+    font-size: 30px;
+}

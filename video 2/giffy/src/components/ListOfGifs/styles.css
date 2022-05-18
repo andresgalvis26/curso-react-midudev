@@ -1,0 +1,9 @@
+.ListOfGifs-item {
+    -webkit-column-break-inside: avoid;
+    border: 5px solid red;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    background-color: #eee;
+    display: inline-block;
+    width: 100%;
+}
