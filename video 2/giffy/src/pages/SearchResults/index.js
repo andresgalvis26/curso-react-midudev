@@ -1,14 +1,24 @@
 import React from "react";
 import ListOfGifs from '../../components/ListOfGifs/index'
 import { useGifs } from "../../hooks/useGifs";
+import Spinner from '../../components/Spinner';
 
 export default function SearchResults ({ params }) {
 
     const { keyword } = params;
-    const { gifs } = useGifs({keyword})
+    const { gifs, setPage, loading } = useGifs({keyword})
 
+    const handleNextPage = () => setPage(prevPage => prevPage + 1)
     return <>
+        {loading
+        ? <Spinner />
+        : <>
+            <h3 className="App-title">{decodeURI(keyword)}</h3>
+            <ListOfGifs gifs={gifs} />
         <ListOfGifs gifs={gifs}/>
+    </> 
+    }
+    <br />
+    <button onClick={handleNextPage}>Get next page...</button>
     </>
-
 }
